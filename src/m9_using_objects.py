@@ -6,7 +6,7 @@ This module lets you practice  ** using objects **, including:
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
          their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -15,6 +15,8 @@ def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
+    # two_circles()
+    circle_and_rectangle()
 
 def two_circles():
     """
@@ -27,13 +29,24 @@ def two_circles():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its green doc-string above.
+    # DONE: 2. Implement this function, per its green doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.pdf  lists all legal color-names.
     # Put a statement in   main   to test this function
     #    (by calling this function).
     # ------------------------------------------------------------------
 
+    window = rg.RoseWindow()
+    fill_circle = rg.Circle(rg.Point(100, 100), 20)
+    fill_circle.fill_color = 'blue'
+
+    not_filled_circle = rg.Circle(rg.Point(250, 250), 25)
+
+    fill_circle.attach_to(window)
+    not_filled_circle.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
 
 def circle_and_rectangle():
     """
